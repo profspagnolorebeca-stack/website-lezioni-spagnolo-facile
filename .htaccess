@@ -1,0 +1,8 @@
+//Rewrite to www
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^lezionidispagnolofacile.it[nc]
+RewriteRule ^(.*)$ http://www.lezionidispagnolofacile.it/$1 [r=301,nc]
+
+//Change default directory page
+DirectoryIndex index.html

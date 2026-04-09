@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Guidelines — Lezioni di Spagnolo Facile</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ─────────────────────────────────── */
+:root {
+  --cream:      #F5ECD7;
+  --white-warm: #FAFAF8;
+  --coral-bg:   #FFE4D0;
+  --coral:      #D85A30;
+  --coral-lt:   #FAECE7;
+  --coral-mid:  #F0997B;
+  --coral-dk:   #993C1D;
+  --ink:        #1C1C2E;
+  --ink-mid:    #B8C8E8;
+  --ink-lt:     #252542;
+  --green:      #1D9E75;
+  --green-lt:   #E1F5EE;
+  --green-txt:  #085041;
+  --amber:      #BA7517;
+  --amber-lt:   #FAEEDA;
+  --amber-dk:   #633806;
+  --blue:       #1B4080;
+  --blue-lt:    #EBF0FA;
+  --text-dk:    #1a1a18;
+  --text-md:    #555550;
+  --text-lt:    #888880;
+  --border:     #e0d8cc;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white-warm);
+  color: var(--text-dk);
+  font-size: 15px;
+  line-height: 1.65;
+}
+.serif { font-family: 'IM Fell English', Georgia, serif; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+/* ── LAYOUT ─────────────────────────────────── */
+.container { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
+.sec { padding: 72px 0; }
+.sec + .sec { border-top: 1px solid var(--border); }
+
+/* ── COVER ─────────────────────────────────── */
+.cover {
+  background: var(--ink);
+  padding: 80px 32px 72px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 400px; height: 400px;
+  background: var(--coral);
+  border-radius: 50%;
+  opacity: .08;
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: 120px;
+  width: 280px; height: 280px;
+  background: var(--green);
+  border-radius: 50%;
+  opacity: .07;
+}
+.cover__inner { max-width: 1040px; margin: 0 auto; position: relative; z-index: 1; }
+.cover__eyebrow {
+  font-size: 11px; font-weight: 500; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--coral);
+  display: block; margin-bottom: 20px;
+}
+.cover__title {
+  font-size: clamp(34px, 5vw, 60px); font-weight: 400;
+  line-height: 1.1; color: #fff; margin-bottom: 16px;
+}
+.cover__sub { font-size: 16px; color: var(--ink-mid); line-height: 1.75; max-width: 520px; margin-bottom: 36px; }
+.cover__meta { display: flex; gap: 32px; flex-wrap: wrap; }
+.cover__meta-item { display: flex; flex-direction: column; gap: 3px; }
+.cover__meta-label { font-size: 11px; color: #7A8CAA; text-transform: uppercase; letter-spacing: .08em; }
+.cover__meta-value { font-size: 14px; color: #fff; font-weight: 500; }
+
+/* ── NAV (Sidebar-style TOC) ─────────────────── */
+.doc-nav {
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 32px;
+  position: sticky; top: 0; z-index: 100;
+}
+.doc-nav__inner {
+  max-width: 1040px; margin: 0 auto;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.doc-nav__label {
+  font-size: 11px; font-weight: 500; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--text-lt);
+  margin-right: 8px; white-space: nowrap;
+}
+.doc-nav__link {
+  font-size: 13px; color: var(--text-md);
+  padding: 5px 12px; border-radius: 20px;
+  transition: background .15s, color .15s;
+}
+.doc-nav__link:hover { background: var(--coral-lt); color: var(--coral); }
+
+/* ── SECTION HEADER ─────────────────────────── */
+.sec-header { margin-bottom: 40px; }
+.sec-header__num {
+  font-size: 11px; font-weight: 500; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--coral);
+  display: block; margin-bottom: 8px;
+}
+.sec-header__num--green { color: var(--green); }
+.sec-header__num--amber { color: var(--amber); }
+.sec-header__num--blue  { color: var(--blue);  }
+.sec-header__title {
+  font-size: clamp(24px, 3vw, 36px); font-weight: 400;
+  line-height: 1.2; color: var(--text-dk); margin-bottom: 8px;
+}
+.sec-header__sub { font-size: 15px; color: var(--text-md); line-height: 1.7; max-width: 600px; }
+
+/* ── COLOR PALETTE ─────────────────────────── */
+.palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+.color-card { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+.color-card__swatch { height: 88px; }
+.color-card__info { padding: 12px 14px; background: #fff; }
+.color-card__name { font-size: 13px; font-weight: 500; color: var(--text-dk); margin-bottom: 2px; }
+.color-card__hex  { font-size: 12px; color: var(--text-lt); font-family: 'DM Mono', 'Courier New', monospace; }
+.color-card__use  { font-size: 11px; color: var(--text-lt); margin-top: 5px; line-height: 1.45; }
+
+.color-group { margin-bottom: 40px; }
+.color-group__label {
+  font-size: 12px; font-weight: 500; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--text-lt);
+  margin-bottom: 14px; display: block;
+}
+
+/* ── TYPOGRAPHY ─────────────────────────────── */
+.type-specimen { display: flex; flex-direction: column; gap: 24px; }
+.type-row {
+  display: grid; grid-template-columns: 160px 1fr;
+  gap: 24px; align-items: baseline;
+  padding-bottom: 24px; border-bottom: 1px solid var(--border);
+}
+.type-row:last-child { border-bottom: none; }
+.type-meta { display: flex; flex-direction: column; gap: 4px; }
+.type-meta__label { font-size: 11px; font-weight: 500; color: var(--text-lt); text-transform: uppercase; letter-spacing: .08em; }
+.type-meta__spec  { font-size: 12px; color: var(--text-md); }
+
+.font-card {
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 14px; padding: 28px 28px 24px;
+  margin-bottom: 24px;
+}
+.font-card__name { font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--coral); margin-bottom: 4px; }
+.font-card__full { font-size: 13px; color: var(--text-md); margin-bottom: 20px; }
+.font-card__sample { line-height: 1.25; color: var(--text-dk); }
+.font-card__weights { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
+.font-card__weight-row { display: flex; align-items: baseline; gap: 16px; }
+.font-card__weight-label { font-size: 11px; color: var(--text-lt); min-width: 80px; }
+
+/* ── SCALE TABLE ─────────────────────────────── */
+.scale-table { width: 100%; border-collapse: collapse; }
+.scale-table th {
+  font-size: 11px; font-weight: 500; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--text-lt);
+  text-align: left; padding: 8px 16px; border-bottom: 1px solid var(--border);
+  background: var(--white-warm);
+}
+.scale-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); }
+.scale-table tr:last-child td { border-bottom: none; }
+.scale-table__name { font-size: 12px; font-weight: 500; color: var(--text-dk); }
+.scale-table__spec { font-size: 12px; color: var(--text-md); }
+.scale-table__use  { font-size: 12px; color: var(--text-lt); }
+.scale-table-wrap { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+
+/* ── VOICE & TONE ─────────────────────────────── */
+.voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+.voice-card {
+  border: 1px solid var(--border); border-radius: 12px;
+  padding: 22px 24px; background: #fff;
+}
+.voice-card__label {
+  font-size: 11px; font-weight: 500; letter-spacing: .09em;
+  text-transform: uppercase; margin-bottom: 12px; display: block;
+}
+.voice-card--yes .voice-card__label { color: var(--green); }
+.voice-card--no  .voice-card__label { color: var(--coral); }
+.voice-card__list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.voice-card__list li {
+  font-size: 13px; color: var(--text-md); line-height: 1.5;
+  display: flex; align-items: flex-start; gap: 9px;
+}
+.voice-dot {
+  width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 6px;
+}
+.voice-dot--yes { background: var(--green); }
+.voice-dot--no  { background: var(--coral); }
+
+.copy-example {
+  border-radius: 12px; padding: 20px 22px; margin-bottom: 12px;
+}
+.copy-example--bad {
+  background: #FFF4F2; border: 1px solid #fccfc5;
+}
+.copy-example--good {
+  background: var(--green-lt); border: 1px solid #b3e6d4;
+}
+.copy-example__label {
+  font-size: 10px; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; margin-bottom: 7px; display: block;
+}
+.copy-example--bad  .copy-example__label { color: var(--coral-dk); }
+.copy-example--good .copy-example__label { color: var(--green-txt); }
+.copy-example__text { font-size: 14px; color: var(--text-dk); line-height: 1.6; }
+
+.pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 32px; }
+.pillar-card {
+  background: var(--cream); border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px 18px;
+}
+.pillar-card__icon { font-size: 24px; margin-bottom: 10px; }
+.pillar-card__title { font-size: 14px; font-weight: 500; color: var(--text-dk); margin-bottom: 5px; }
+.pillar-card__body  { font-size: 13px; color: var(--text-md); line-height: 1.55; }
+
+.keyword-cloud { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+.keyword {
+  display: inline-block; padding: 6px 14px; border-radius: 20px;
+  font-size: 13px; font-weight: 500;
+}
+.keyword--primary { background: var(--coral-lt); color: var(--coral-dk); border: 1px solid var(--coral-mid); }
+.keyword--secondary { background: var(--green-lt); color: var(--green-txt); border: 1px solid #b3e6d4; }
+.keyword--neutral { background: #fff; color: var(--text-md); border: 1px solid var(--border); }
+
+/* ── COMPONENTS ─────────────────────────────── */
+.comp-block {
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 14px; padding: 28px 28px 24px; margin-bottom: 24px;
+}
+.comp-block__title {
+  font-size: 12px; font-weight: 500; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--text-lt); margin-bottom: 20px;
+}
+.comp-block__row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 8px; }
+.comp-block__spec { font-size: 12px; color: var(--text-lt); margin-top: 12px; }
+.comp-block__divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+/* Buttons (replicated from site) */
+.btn {
+  display: inline-block; border: none; border-radius: 8px;
+  padding: 11px 22px; font-size: 14px; font-weight: 500;
+  min-height: 44px; cursor: pointer;
+  transition: background-color .2s, filter .2s, transform .15s;
+  font-family: 'DM Sans', sans-serif; text-decoration: none;
+}
+.btn--coral   { background: var(--coral);  color: #fff; }
+.btn--green   { background: var(--green);  color: #fff; }
+.btn--amber   { background: var(--amber);  color: #fff; }
+.btn--blue    { background: var(--blue);   color: #fff; }
+.btn--ghost   { background: transparent; color: var(--text-dk); border: 1px solid #c0b0a0; }
+.btn--outline { background: transparent; color: var(--text-dk); border: 1px solid var(--border); }
+.btn--sm { font-size: 12px; padding: 7px 16px; min-height: 34px; }
+.btn--lg { font-size: 15px; padding: 14px 30px; min-height: 52px; }
+
+/* Nav pills */
+.nav-pill {
+  font-size: 13px; color: var(--text-md);
+  padding: 6px 14px; border-radius: 20px;
+  transition: background .18s, color .18s; display: inline-block;
+}
+.nav-pill:hover, .nav-pill--active {
+  background: var(--coral-lt); color: var(--coral);
+}
+.nav-pill--active { font-weight: 500; }
+
+/* Tags & Pills */
+.sec-tag {
+  font-size: 11px; font-weight: 500; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--coral); display: inline-block;
+}
+.sec-tag--green  { color: var(--green); }
+.sec-tag--amber  { color: var(--amber); }
+.badge-pill {
+  display: inline-block; font-size: 11px; font-weight: 500;
+  border-radius: 20px; padding: 3px 11px;
+}
+.bp--coral  { background: var(--coral-lt); color: var(--coral-dk); border: 1px solid var(--coral-mid); }
+.bp--green  { background: var(--green-lt); color: var(--green-txt); border: 1px solid #b3e6d4; }
+.bp--amber  { background: var(--amber-lt); color: var(--amber-dk); border: 1px solid #debb7a; }
+.bp--blue   { background: var(--blue-lt);  color: var(--blue);     border: 1px solid #a8bce0; }
+.bp--ink    { background: rgba(255,255,255,.08); color: var(--ink-mid); }
+.bp--solid-green { background: var(--green); color: #fff; }
+
+/* Cards */
+.card-demo {
+  border: 1px solid var(--border); border-radius: 14px;
+  padding: 22px; background: var(--white-warm);
+}
+.card-demo--coral { border-color: var(--coral-mid); border-width: 1.5px; background: #FFF0E8; }
+.card-demo--green { border-color: var(--green);     border-width: 1.5px; background: #F0FAF6; }
+.card-demo--blue  { border-color: var(--blue);      border-width: 1.5px; background: var(--blue-lt); }
+.card-title { font-size: 17px; font-weight: 500; color: var(--text-dk); margin-bottom: 6px; }
+.card-body  { font-size: 13px; color: var(--text-md); line-height: 1.6; }
+
+/* Form inputs */
+.input-demo {
+  border: 1px solid #c0b0a0; border-radius: 8px;
+  padding: 11px 14px; font-size: 14px; font-family: inherit;
+  color: var(--text-dk); background: #fff; outline: none;
+  transition: border-color .2s; width: 100%; max-width: 320px;
+}
+.input-demo:focus { border-color: var(--amber); }
+
+/* Testimonial */
+.testi-demo {
+  background: var(--ink-lt); border: 1px solid #2e2e4e;
+  border-radius: 14px; padding: 22px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.testi-demo--featured { border-color: var(--coral); border-width: 1.5px; }
+.testi-stars { font-size: 14px; color: #EF9F27; }
+.testi-quote { font-size: 14px; color: var(--ink-mid); font-style: italic; line-height: 1.7; }
+.testi-quote strong { color: #fff; font-style: normal; font-weight: 500; }
+.testi-name  { font-size: 14px; font-weight: 500; color: #fff; }
+.testi-role  { font-size: 12px; color: #A0B0D5; margin-top: 2px; }
+
+/* Checklist */
+.checklist { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.checklist li { font-size: 13px; color: var(--text-md); display: flex; align-items: flex-start; gap: 9px; line-height: 1.5; }
+.chk {
+  width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
+  margin-top: 1px; display: flex; align-items: center; justify-content: center;
+}
+.chk--coral { background: var(--coral); }
+.chk--green { background: var(--green); }
+.chk svg { width: 9px; height: 9px; }
+
+/* ── LOGO & BRAND ─────────────────────────────── */
+.brand-usage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.brand-demo {
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 12px; padding: 28px; text-align: center;
+}
+.brand-demo--dark { background: var(--ink); border-color: var(--ink-lt); }
+.brand-demo--cream { background: var(--cream); }
+.brand-logo {
+  display: inline-flex; align-items: center;
+  gap: 10px; margin-bottom: 14px;
+}
+.brand-logo__mark { font-size: 28px; line-height: 1; }
+.brand-logo__name { font-size: 16px; font-weight: 500; }
+.brand-logo--dark .brand-logo__name { color: var(--cream); }
+.brand-demo__label {
+  font-size: 11px; color: var(--text-lt); text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.brand-demo--dark .brand-demo__label { color: #7A8CAA; }
+
+.do-dont-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+.do-card, .dont-card {
+  border-radius: 12px; padding: 18px 20px;
+}
+.do-card   { background: var(--green-lt); border: 1px solid #b3e6d4; }
+.dont-card { background: #FFF4F2; border: 1px solid #fccfc5; }
+.do-card__label, .dont-card__label {
+  font-size: 10px; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; margin-bottom: 10px; display: block;
+}
+.do-card__label   { color: var(--green-txt); }
+.dont-card__label { color: var(--coral-dk); }
+.do-card__list, .dont-card__list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.do-card__list li, .dont-card__list li { font-size: 13px; line-height: 1.5; display: flex; gap: 8px; align-items: flex-start; }
+.do-card__list li   { color: var(--green-txt); }
+.dont-card__list li { color: var(--coral-dk); }
+
+/* ── SPACING ─────────────────────────────────── */
+.spacing-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 8px; }
+.space-block { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.space-visual { background: var(--coral); border-radius: 4px; width: 100%; }
+.space-label { font-size: 11px; color: var(--text-lt); text-align: center; }
+.space-val   { font-size: 12px; font-weight: 500; color: var(--text-dk); text-align: center; }
+
+/* ── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 768px) {
+  .voice-grid, .brand-usage-grid, .do-dont-grid { grid-template-columns: 1fr; }
+  .pillar-grid { grid-template-columns: 1fr 1fr; }
+  .palette-grid { grid-template-columns: repeat(2, 1fr); }
+  .type-row { grid-template-columns: 1fr; gap: 8px; }
+  .container { padding: 0 20px; }
+  .sec { padding: 52px 0; }
+}
+@media (max-width: 480px) {
+  .pillar-grid { grid-template-columns: 1fr; }
+  .cover__title { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ -->
+<!--  COVER                                     -->
+<!-- ══════════════════════════════════════════ -->
+<section class="cover">
+  <div class="cover__inner">
+    <span class="cover__eyebrow">Lezioni di Spagnolo Facile · Rebeca Martínez</span>
+    <h1 class="cover__title serif">Brand<br>Guidelines</h1>
+    <p class="cover__sub">La guida visiva e comunicativa del brand. Usala ogni volta che crei contenuti, aggiorni il sito o collabori con professionisti esterni.</p>
+    <div class="cover__meta">
+      <div class="cover__meta-item">
+        <span class="cover__meta-label">Versione</span>
+        <span class="cover__meta-value">1.0 · Aprile 2026</span>
+      </div>
+      <div class="cover__meta-item">
+        <span class="cover__meta-label">Lingua</span>
+        <span class="cover__meta-value">Italiano</span>
+      </div>
+      <div class="cover__meta-item">
+        <span class="cover__meta-label">Sito</span>
+        <span class="cover__meta-value">lezionidispagnolofacile.it</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!--  NAV                                        -->
+<!-- ══════════════════════════════════════════ -->
+<nav class="doc-nav">
+  <div class="doc-nav__inner">
+    <span class="doc-nav__label">Indice</span>
+    <a href="#brand"      class="doc-nav__link">01 Brand</a>
+    <a href="#colori"     class="doc-nav__link">02 Colori</a>
+    <a href="#tipografia" class="doc-nav__link">03 Tipografia</a>
+    <a href="#voce"       class="doc-nav__link">04 Tono di voce</a>
+    <a href="#componenti" class="doc-nav__link">05 Componenti</a>
+    <a href="#logo"       class="doc-nav__link">06 Logo & Immagini</a>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!--  01 · IDENTITÀ DEL BRAND                   -->
+<!-- ══════════════════════════════════════════ -->
+<section class="sec" id="brand">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-header__num">01 · Identità del brand</span>
+      <h2 class="sec-header__title serif">Chi siamo, cosa offriamo,<br>perché siamo diversi.</h2>
+      <p class="sec-header__sub">La base da tenere sempre a mente: ogni scelta visiva e comunicativa nasce da qui.</p>
+    </div>
+
+    <div class="pillar-grid">
+      <div class="pillar-card">
+        <div class="pillar-card__icon">🎯</div>
+        <p class="pillar-card__title">Missione</p>
+        <p class="pillar-card__body">Aiutare italiani adulti e ragazzi a imparare lo spagnolo davvero — non con corsi preconfezionati, ma con un percorso personalizzato costruito su misura.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-card__icon">✨</div>
+        <p class="pillar-card__title">Posizionamento</p>
+        <p class="pillar-card__body">Non vendiamo corsi. Vendiamo percorsi personalizzati. Il valore è la personalizzazione, la strategia e la guida di una madrelingua formata all'Istituto Cervantes.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-card__icon">🌍</div>
+        <p class="pillar-card__title">Target</p>
+        <p class="pillar-card__body">Italiani dai 20 ai 40 anni con motivazione alta e livello culturale medio-alto. Ragazzi 12–17 per la preparazione DELE Escolar.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-card__icon">📜</div>
+        <p class="pillar-card__title">Credenziali chiave</p>
+        <p class="pillar-card__body">Madrelingua spagnola. Laurea in Letteratura Latinoamericana e Linguistica. Formata e accreditata Istituto Cervantes. Esaminatrice DELE ufficiale.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-card__icon">💬</div>
+        <p class="pillar-card__title">Personalità del brand</p>
+        <p class="pillar-card__body">Professionale ma umana. Diretta ma calda. Competente senza essere accademica. Come un'amica esperta che ti guida senza giudicarti.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-card__icon">🥭</div>
+        <p class="pillar-card__title">Simbolo del brand</p>
+        <p class="pillar-card__body">Il mango 🥭 è il logo emoji del brand. Evoca calore, il mondo ispanico, la dolcezza dell'apprendimento. Va sempre abbinato al nome per scritto.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;padding:24px 28px;background:var(--coral);border-radius:14px;color:#fff;">
+      <p style="font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-bottom:8px;">Frase guida del brand</p>
+      <p class="serif" style="font-size:clamp(20px,3vw,28px);line-height:1.3;font-weight:400;">«Lo spagnolo non è "quasi italiano". Inizia a parlarlo davvero.»</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!--  02 · COLORI                               -->
+<!-- ══════════════════════════════════════════ -->
+<section class="sec" id="colori">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-header__num">02 · Colori</span>
+      <h2 class="sec-header__title serif">La palette del brand.</h2>
+      <p class="sec-header__sub">Ogni colore ha un ruolo preciso. Non mischiare i colori semantici tra loro: il corallo è per le CTA generali, il verde per il DELE, l'ambra per i contenuti gratuiti e la lead gen.</p>
+    </div>
+
+    <!-- PRIMARY -->
+    <div class="color-group">
+      <span class="color-group__label">Colori primari — uso quotidiano</span>
+      <div class="palette-grid">
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#D85A30;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Coral</p>
+            <p class="color-card__hex">#D85A30 · RGB(216,90,48)</p>
+            <p class="color-card__use">Colore principale. CTA primarie, accenti, tag sezione, link hover nav.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#FAECE7;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Coral Light</p>
+            <p class="color-card__hex">#FAECE7</p>
+            <p class="color-card__use">Sfondo hover nav, sfondi card leggeri, highlight testo.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#F0997B;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Coral Mid</p>
+            <p class="color-card__hex">#F0997B</p>
+            <p class="color-card__use">Bordi card coral, separatori, elementi secondari.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#993C1D;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Coral Dark</p>
+            <p class="color-card__hex">#993C1D</p>
+            <p class="color-card__use">Testo su sfondi coral chiari, stati hover testo.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#F5ECD7;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Cream</p>
+            <p class="color-card__hex">#F5ECD7</p>
+            <p class="color-card__use">Sfondo sezioni hero, sezioni calde, footer ambientazioni.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#FAFAF8;border:1px solid #e0d8cc;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">White Warm</p>
+            <p class="color-card__hex">#FAFAF8</p>
+            <p class="color-card__use">Background principale del sito. Navbar. Sezioni neutre.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECONDARY -->
+    <div class="color-group">
+      <span class="color-group__label">Colori secondari — DELE & successo</span>
+      <div class="palette-grid">
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#1D9E75;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Green</p>
+            <p class="color-card__hex">#1D9E75 · RGB(29,158,117)</p>
+            <p class="color-card__use">Colore DELE, successo, DELE Escolar. CTA verdi. Badge "superato".</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#E1F5EE;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Green Light</p>
+            <p class="color-card__hex">#E1F5EE</p>
+            <p class="color-card__use">Sfondi card DELE, highlight esempi corretti.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#085041;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Green Text</p>
+            <p class="color-card__hex">#085041</p>
+            <p class="color-card__use">Testo su sfondi verdi chiari. Massimo contrasto su green-lt.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#BA7517;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Amber</p>
+            <p class="color-card__hex">#BA7517 · RGB(186,117,23)</p>
+            <p class="color-card__use">Newsletter, lead magnet, guide gratuite. CTA secondarie.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#FAEEDA;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Amber Light</p>
+            <p class="color-card__hex">#FAEEDA</p>
+            <p class="color-card__use">Sfondo sezione newsletter. Sfondo lead magnet box.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#1B4080;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Blue</p>
+            <p class="color-card__hex">#1B4080 · RGB(27,64,128)</p>
+            <p class="color-card__use">Esclusivo per la pagina DELE adulti. Non usare altrove.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DARK / TEXT -->
+    <div class="color-group">
+      <span class="color-group__label">Colori testo & sfondi scuri</span>
+      <div class="palette-grid">
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#1C1C2E;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Ink</p>
+            <p class="color-card__hex">#1C1C2E</p>
+            <p class="color-card__use">Sfondo sezioni testimonianze. Footer. Sezioni dark.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#252542;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Ink Light</p>
+            <p class="color-card__hex">#252542</p>
+            <p class="color-card__use">Sfondi card su sfondo ink. Bordi su dark section.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#1a1a18;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Text Dark</p>
+            <p class="color-card__hex">#1a1a18</p>
+            <p class="color-card__use">Testo principale su sfondi chiari. Headings.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#555550;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Text Medium</p>
+            <p class="color-card__hex">#555550</p>
+            <p class="color-card__use">Testo corpo, descrizioni, paragrafi secondari.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#888880;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Text Light</p>
+            <p class="color-card__hex">#888880</p>
+            <p class="color-card__use">Didascalie, note legali, meta-info, placeholder.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-card__swatch" style="background:#e0d8cc;"></div>
+          <div class="color-card__info">
+            <p class="color-card__name">Border</p>
+            <p class="color-card__hex">#e0d8cc</p>
+            <p class="color-card__use">Bordi card, divisori, linee separatrici su sfondo chiaro.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- USAGE RULES -->
+    <div style="background: var(--amber-lt); border: 1px solid #debb7a; border-radius: 14px; padding: 24px 28px; margin-top: 8px;">
+      <p style="font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--amber-dk);margin-bottom:10px;">Regole d'uso dei colori</p>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+        <li style="font-size:13px;color:var(--amber-dk);display:flex;gap:9px;align-items:flex-start;"><span style="margin-top:4px;">•</span> Il <strong>corallo</strong> è il colore primario: usarlo per le CTA principali e gli accenti globali.</li>
+        <li style="font-size:13px;color:var(--amber-dk);display:flex;gap:9px;align-items:flex-start;"><span style="margin-top:4px;">•</span> Il <strong>verde</strong> è riservato al mondo DELE e DELE Escolar. Non usarlo per i percorsi spagnolo generico.</li>
+        <li style="font-size:13px;color:var(--amber-dk);display:flex;gap:9px;align-items:flex-start;"><span style="margin-top:4px;">•</span> L'<strong>ambra</strong> è per contenuti gratuiti, newsletter e lead magnet. Non usarla per CTA di vendita.</li>
+        <li style="font-size:13px;color:var(--amber-dk);display:flex;gap:9px;align-items:flex-start;"><span style="margin-top:4px;">•</span> Il <strong>blu</strong> (#1B4080) è esclusivo della pagina preparazione DELE adulti. Non usarlo altrove.</li>
+        <li style="font-size:13px;color:var(--amber-dk);display:flex;gap:9px;align-items:flex-start;"><span style="margin-top:4px;">•</span> Non usare mai testo chiaro su sfondo chiaro, né testo scuro su sfondo scuro senza verifica del contrasto.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!--  03 · TIPOGRAFIA                           -->
+<!-- ══════════════════════════════════════════ -->
+<section class="sec" id="tipografia">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-header__num sec-header__num--green">03 · Tipografia</span>
+      <h2 class="sec-header__title serif">Due font, un'identità coerente.</h2>
+      <p class="sec-header__sub">DM Sans per tutto il corpo del sito. IM Fell English solo per titoli principali, headline e citazioni — per aggiungere calore e personalità senza appesantire.</p>
+    </div>
+
+    <!-- Font Cards -->
+    <div class="font-card">
+      <p class="font-card__name">Font principale — UI & corpo</p>
+      <p class="font-card__full">DM Sans · Google Fonts · Pesi: 300, 400, 500</p>
+      <p class="font-card__sample" style="font-family:'DM Sans',sans-serif;font-size:36px;font-weight:400;">Lo spagnolo si impara davvero.</p>
+      <p style="font-family:'DM Sans',sans-serif;font-size:18px;color:var(--text-md);margin-top:10px;line-height:1.7;">Percorso personalizzato 1:1 per italiani. Grammatica chiara, pratica reale, feedback continuo senza ansia da errore.</p>
+      <div class="font-card__weights">
+        <div class="font-card__weight-row">
+          <span class="font-card__weight-label">Light / 300</span>
+          <span style="font-family:'DM Sans';font-weight:300;font-size:20px;color:var(--text-dk);">Lezioni di spagnolo online</span>
+        </div>
+        <div class="font-card__weight-row">
+          <span class="font-card__weight-label">Regular / 400</span>
+          <span style="font-family:'DM Sans';font-weight:400;font-size:20px;color:var(--text-dk);">Lezioni di spagnolo online</span>
+        </div>
+        <div class="font-card__weight-row">
+          <span class="font-card__weight-label">Medium / 500</span>
+          <span style="font-family:'DM Sans';font-weight:500;font-size:20px;color:var(--text-dk);">Lezioni di spagnolo online</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="font-card">
+      <p class="font-card__name">Font editoriale — Titoli & citazioni</p>
+      <p class="font-card__full">IM Fell English · Google Fonts · Regular + Italic</p>
+      <p class="font-card__sample serif" style="font-size:38px;font-weight:400;color:var(--text-dk);">Lo spagnolo si impara davvero.</p>
+      <p class="serif" style="font-size:20px;color:var(--text-md);margin-top:10px;line-height:1.7;font-style:italic;">«Grazie a Rebeca ho imparato da zero. La consiglio tantissimo.»</p>
+      <div class="font-card__weights">
+        <div class="font-card__weight-row">
+          <span class="font-card__weight-label">Regular</span>
+          <span class="serif" style="font-size:22px;color:var(--text-dk);">Supera il DELE — con strategia</span>
+        </div>
+        <div class="font-card__weight-row">
+          <span class="font-card__weight-label">Italic</span>
+          <span class="serif" style="font-size:22px;color:var(--text-dk);font-style:italic;">Supera il DELE — con strategia</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scale -->
+    <p style="font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-lt);margin-bottom:14px;margin-top:8px;">Scala tipografica</p>
+    <div class="scale-table-wrap">
+      <table class="scale-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Dimensione</th>
+            <th>Font</th>
+            <th>Peso</th>
+            <th>Uso tipico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><p class="scale-table__name">Hero H1</p></td>
+            <td><p class="scale-table__spec">clamp(28px, 4vw, 44px)</p></td>
+            <td><p class="scale-table__spec">IM Fell English</p></td>
+            <td><p class="scale-table__spec">400</p></td>
+            <td><p class="scale-table__use">Headline principale di ogni pagina</p></td>
+          </tr>
+          <tr>
+            <td><p class="scale-table__name">Section H2</p></td>
+            <td><p class="scale-table__spec">clamp(22px, 3vw, 34px)</p></td>
+            <td><p class="scale-table__spec">IM Fell English</p></td>
+            <td><p class="scale-table__spec">400</p></td>
+            <td><p class="scale-table__use">Titolo di ogni sezione</p></td>
+          </tr>
+          <tr>
+            <td><p class="scale-table__name">Card H3</p></td>
+            <td><p class="scale-table__spec">17–22px</p></td>
+            <td><p class="scale-table__spec">DM Sans</p></td>
+            <td><p class="scale-table__spec">500</p></td>
+            <td><p class="scale-table__use">Titolo card servizio, titolo riquadro</p></td>
+          </tr>
+          <tr>
+            <td><p class="scale-table__name">Body large</p></td>
+            <td><p class="scale-table__spec">16px</p></td>
+            <td><p class="scale-table__spec">DM Sans</p></td>
+            <td><p class="scale-table__spec">400</p></td>
+            <td><p class="scale-table__use">Sottotitolo hero, intro sezione</p></td>
+          </tr>
+          <tr>
+            <td><p class="scale-table__name">Body</p></td>
+            <td><p class="scale-table__spec">15px</p></td>
+            <td><p class="scale-table__spec">DM Sans</p></td>
+            <td><p class="scale-table__spec">400</p></td>
+            <td><p class="scale-table__use">Testo principale, paragrafi</p></td>
+          </tr>
+          <tr>
+            <td><p class="scale-table__name">Body small</p></td>
+            <td><p class="scale-table__spec">13–14px</p></td>
+            <td><p class="scale-table__spec">DM Sans</p></td>
+            <td><p class="scale-table__spec">400</p></td>
+            <td><p class="scale-table__use">Card body, descrizioni, checklist</p></td>
+          </tr>
+          <tr>
+            <td><p class="scale-table__name">Label / Tag</p></td>
+            <td><p class="scale-table__spec">11px</p></td>
+            <td><p class="scale-table__spec">DM Sans</p></td>
+            <td><p class="scale-table__spec">500</p></td>
+            <td><p class="scale-table__use">Tag sezione, etichette uppercase, badge</p></td>
+          </tr>
+          <tr>
+            <td><p class="scale-table__name">Caption</p></td>
+            <td><p class="scale-table__spec">11–12px</p></td>
+            <td><p class="scale-table__spec">DM Sans</p></td>
+            <td><p class="scale-table__spec">400</p></td>
+            <td><p class="scale-table__use">Didascalie foto, note legali, meta-info</p></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top:24px;padding:18px 22px;background:#fff;border:1px solid var(--border);border-radius:10px;">
+      <p style="font-size:12px;font-weight:500;color:var(--text-lt);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;">Regola d'oro</p>
+      <p style="font-size:13px;color:var(--text-md);line-height:1.6;">Usa <strong style="color:var(--text-dk);">IM Fell English</strong> con parsimonia — solo per i titoli principali. Tutto il resto (nav, bottoni, body, form, footer) usa <strong style="color:var(--text-dk);">DM Sans</strong>. Non mescolare i due font all'interno della stessa riga o componente.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!--  04 · TONO DI VOCE                         -->
+<!-- ══════════════════════════════════════════ -->
+<section class="sec" id="voce">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-header__num sec-header__num--amber">04 · Tono di voce & copy</span>
+      <h2 class="sec-header__title serif">Come parla questo brand.</h2>
+      <p class="sec-header__sub">Ogni parola conta. Qui trovi le linee guida per scrivere contenuti coerenti con l'identità del brand: sito, social, email, messaggi WhatsApp.</p>
+    </div>
+
+    <!-- Personality pillars -->
+    <div class="pillar-grid" style="margin-bottom:40px;">
+      <div class="pillar-card">
+        <div class="pillar-card__icon">🤝</div>
+        <p class="pillar-card__title">Umana, non robotica</p>
+        <p class="pillar-card__body">Parla come una persona vera. Usa il "tu", mostra empatia, racconta esperienze concrete. Niente frasi aziendali o burocratiche.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-card__icon">🎓</div>
+        <p class="pillar-card__title">Competente, non accademica</p>
+        <p class="pillar-card__body">Dimostra autorevolezza con i fatti (Istituto Cervantes, esaminatrice DELE, studenti reali) — non con un linguaggio tecnico che allontana.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-card__icon">🎯</div>
+        <p class="pillar-card__title">Diretta, non aggressiva</p>
+        <p class="pillar-card__body">Vai al punto. CTA chiare, titoli netti. Niente pressione o urgenza falsa. La persuasione viene dalla verità, non dalla paura.</p>
+      </div>
+    </div>
+
+    <!-- Sì / No -->
+    <p style="font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-lt);margin-bottom:14px;">Come scrivere — cosa sì, cosa no</p>
+    <div class="voice-grid">
+      <div class="voice-card voice-card--yes">
+        <span class="voice-card__label">✓ Sì — usa questo registro</span>
+        <ul class="voice-card__list">
+          <li><span class="voice-dot voice-dot--yes"></span>Tu informale diretto: "Cosa vuoi ottenere?"</li>
+          <li><span class="voice-dot voice-dot--yes"></span>Frasi brevi, incisive, max 2 righe per concetto</li>
+          <li><span class="voice-dot voice-dot--yes"></span>"Percorso personalizzato", "su misura", "per italiani"</li>
+          <li><span class="voice-dot voice-dot--yes"></span>Dati concreti: "+50 studenti", "C1 superato", "A1–C2"</li>
+          <li><span class="voice-dot voice-dot--yes"></span>Empatia verso i pain point: "non è colpa tua. È il metodo."</li>
+          <li><span class="voice-dot voice-dot--yes"></span>CTA chiare e specifiche: "Prenota sessione conoscitiva"</li>
+          <li><span class="voice-dot voice-dot--yes"></span>Parole spagnole integrate con leggerezza (DELE, madrelingua, Buenos Días)</li>
+        </ul>
+      </div>
+      <div class="voice-card voice-card--no">
+        <span class="voice-card__label">✗ No — evita questi errori</span>
+        <ul class="voice-card__list">
+          <li><span class="voice-dot voice-dot--no"></span>Voi formale o terza persona distaccata</li>
+          <li><span class="voice-dot voice-dot--no"></span>"Corso di spagnolo" → sostituisci con "percorso personalizzato"</li>
+          <li><span class="voice-dot voice-dot--no"></span>Gergo accademico: "approccio didattico comunicativo-interculturale"</li>
+          <li><span class="voice-dot voice-dot--no"></span>Falsa urgenza: "Ultimi posti disponibili!", "Offerta limitata!"</li>
+          <li><span class="voice-dot voice-dot--no"></span>Superlative vuote: "il miglior metodo del mondo"</li>
+          <li><span class="voice-dot voice-dot--no"></span>Emoji eccessive o stile infantile</li>
+          <li><span class="voice-dot voice-dot--no"></span>CTA generiche: "Clicca qui", "Scopri di più" senza contesto</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copy examples -->
+    <p style="font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-lt);margin-top:40px;margin-bottom:14px;">Esempi concreti di copy — prima e dopo</p>
+
+    <div style="margin-bottom:20px;">
+      <div class="copy-example copy-example--bad">
+        <span class="copy-example__label">✗ Evita</span>
+        <p class="copy-example__text">"Offriamo corsi di lingua spagnola online per studenti di ogni livello con un approccio metodologico certificato dall'Istituto Cervantes."</p>
+      </div>
+      <div class="copy-example copy-example--good">
+        <span class="copy-example__label">✓ Meglio così</span>
+        <p class="copy-example__text">"Non un corso — un percorso costruito su di te. Con una madrelingua formata all'Istituto Cervantes al tuo fianco."</p>
+      </div>
+    </div>
+
+    <div style="margin-bottom:20px;">
+      <div class="copy-example copy-example--bad">
+        <span class="copy-example__label">✗ Evita</span>
+        <p class="copy-example__text">"La preparazione al DELE richiede un approccio strutturato e metodico. Iscriviti ora per non perdere il tuo posto!"</p>
+      </div>
+      <div class="copy-example copy-example--good">
+        <span class="copy-example__label">✓ Meglio così</span>
+        <p class="copy-example__text">"Il DELE non è un corso di lingua. È un esame strategico. Ti preparo dall'interno — come chi sa esattamente cosa cerca la commissione."</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="copy-example copy-example--bad">
+        <span class="copy-example__label">✗ Evita</span>
+        <p class="copy-example__text">"Contattaci per maggiori informazioni sui nostri corsi!"</p>
+      </div>
+      <div class="copy-example copy-example--good">
+        <span class="copy-example__label">✓ Meglio così</span>
+        <p class="copy-example__text">"Prenota una sessione conoscitiva gratuita. Ci conosciamo, valutiamo il tuo livello e troviamo il percorso giusto insieme."</p>
+      </div>
+    </div>
+
+    <!-- Keywords -->
+    <p style="font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-lt);margin-top:40px;margin-bottom:10px;">Parole chiave del brand</p>
+    <p style="font-size:13px;color:var(--text-md);margin-bottom:12px;">Integra queste parole naturalmente nel copy per rafforzare il posizionamento SEO e il tono del brand.</p>
+    <div class="keyword-cloud">
+      <span class="keyword keyword--primary">percorso personalizzato</span>
+      <span class="keyword keyword--primary">su misura</span>
+      <span class="keyword keyword--primary">madrelingua</span>
+      <span class="keyword keyword--primary">lezioni 1:1</span>
+      <span class="keyword keyword--primary">online</span>
+      <span class="keyword keyword--secondary">preparazione DELE</span>
+      <span class="keyword keyword--secondary">esaminatrice accreditata</span>
+      <span class="keyword keyword--secondary">Istituto Cervantes</span>
+      <span class="keyword keyword--secondary">DELE Escolar</span>
+      <span class="keyword keyword--neutral">per italiani</span>
+      <span class="keyword keyword--neutral">da zero a fluente</span>
+      <span class="keyword keyword--neutral">sessione conoscitiva gratuita</span>
+      <span class="keyword keyword--neutral">itagnolo</span>
+      <span class="keyword keyword--neutral">strategia</span>
+    </div>
+
+    <!-- DELE nota -->
+    <div style="margin-top:32px;padding:20px 24px;background:var(--blue-lt);border:1px solid #a8bce0;border-radius:12px;">
+      <p style="font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:8px;">Nota speciale — il DELE</p>
+      <p style="font-size:13px;color:#1a2e5a;line-height:1.65;">Il DELE <strong>non è un corso di lingua</strong> — è una <strong>preparazione strategica a un esame</strong>. Quando ne parli, enfatizza: strategie, simulazioni, criteri di valutazione, gestione del tempo, sicurezza il giorno dell'esame. <em>Non</em> parlare di "imparare la grammatica" o "migliorare il livello" nel contesto DELE.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!--  05 · COMPONENTI UI                        -->
+<!-- ══════════════════════════════════════════ -->
+<section class="sec" id="componenti">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-header__num sec-header__num--blue">05 · Componenti UI</span>
+      <h2 class="sec-header__title serif">I mattoni del sito.</h2>
+      <p class="sec-header__sub">Tutti i componenti riutilizzabili del brand. Ogni elemento qui sotto è renderizzato esattamente come appare nel sito.</p>
+    </div>
+
+    <!-- BOTTONI -->
+    <div class="comp-block">
+      <p class="comp-block__title">Bottoni</p>
+
+      <p style="font-size:12px;color:var(--text-lt);margin-bottom:12px;font-weight:500;">Bottoni primari</p>
+      <div class="comp-block__row">
+        <a class="btn btn--coral">Prenota sessione →</a>
+        <a class="btn btn--green">Supera il DELE →</a>
+        <a class="btn btn--amber">Iscriviti gratis →</a>
+        <a class="btn btn--blue">Preparazione DELE →</a>
+      </div>
+
+      <hr class="comp-block__divider">
+
+      <p style="font-size:12px;color:var(--text-lt);margin-bottom:12px;font-weight:500;">Bottoni secondari</p>
+      <div class="comp-block__row">
+        <a class="btn btn--ghost">Scopri il percorso</a>
+        <a class="btn btn--outline">Vai ai servizi</a>
+      </div>
+
+      <hr class="comp-block__divider">
+
+      <p style="font-size:12px;color:var(--text-lt);margin-bottom:12px;font-weight:500;">Taglie</p>
+      <div class="comp-block__row" style="align-items:center;">
+        <a class="btn btn--coral btn--sm">Piccolo</a>
+        <a class="btn btn--coral">Standard</a>
+        <a class="btn btn--coral btn--lg">Grande</a>
+      </div>
+
+      <p class="comp-block__spec">Raggio bordi: 8px · Min height: 44px (accessibilità) · Font: DM Sans 500 · Padding: 11px 22px</p>
+    </div>
+
+    <!-- NAV PILLS -->
+    <div class="comp-block">
+      <p class="comp-block__title">Navigazione — pill link</p>
+      <div class="comp-block__row">
+        <a class="nav-pill">Da zero a fluente</a>
+        <a class="nav-pill nav-pill--active">Supera il DELE</a>
+        <a class="nav-pill">DELE Escolar</a>
+        <a class="btn btn--coral btn--sm">Contattami</a>
+      </div>
+      <p class="comp-block__spec">Nav link: 13px · border-radius: 20px · Hover & active: bg coral-lt, colore coral</p>
+    </div>
+
+    <!-- TAGS & BADGES -->
+    <div class="comp-block">
+      <p class="comp-block__title">Tag sezione & Badge pill</p>
+
+      <p style="font-size:12px;color:var(--text-lt);margin-bottom:10px;font-weight:500;">Tag sezione (uppercase, 11px, sopra i titoli H2)</p>
+      <div class="comp-block__row" style="flex-wrap:wrap;gap:16px;margin-bottom:20px;">
+        <span class="sec-tag">Ti è mai capitato di…</span>
+        <span class="sec-tag--green sec-tag">DELE &amp; certificazioni</span>
+        <span class="sec-tag sec-tag--amber">Lead magnet gratuito</span>
+      </div>
+
+      <hr class="comp-block__divider">
+
+      <p style="font-size:12px;color:var(--text-lt);margin-bottom:10px;font-weight:500;">Badge pill (bordi arrotondati, per card e testimonianze)</p>
+      <div class="comp-block__row" style="flex-wrap:wrap;">
+        <span class="badge-pill bp--coral">Spagnolo da zero a fluente</span>
+        <span class="badge-pill bp--green">DELE A1–C2</span>
+        <span class="badge-pill bp--amber">Newsletter gratuita</span>
+        <span class="badge-pill bp--blue">Preparazione DELE</span>
+        <span class="badge-pill bp--solid-green">DELE C1 ✓</span>
+        <span class="badge-pill bp--ink">★ Google Review</span>
+      </div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="comp-block">
+      <p class="comp-block__title">Card servizi</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <div class="card-demo card-demo--coral">
+          <span class="badge-pill bp--coral" style="margin-bottom:12px;display:inline-block;">Spagnolo generico</span>
+          <p class="card-title">Da zero a fluente</p>
+          <p class="card-body">Un percorso personalizzato per italiani, dalla prima parola alla conversazione.</p>
+        </div>
+        <div class="card-demo card-demo--blue">
+          <span class="badge-pill bp--blue" style="margin-bottom:12px;display:inline-block;">Supera il DELE</span>
+          <p class="card-title">Preparazione DELE</p>
+          <p class="card-body">Simulazioni reali e strategie mirate da un'esaminatrice accreditata.</p>
+        </div>
+        <div class="card-demo card-demo--green">
+          <span class="badge-pill bp--green" style="margin-bottom:12px;display:inline-block;">DELE Escolar · 12–17</span>
+          <p class="card-title">DELE Escolar</p>
+          <p class="card-body">Percorso per ragazzi 12–17 anni con doppia uscita A2–B1 o B2–C1.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIAL -->
+    <div class="comp-block">
+      <p class="comp-block__title">Card testimonianza — usata su sfondo ink (#1C1C2E)</p>
+      <div style="background:var(--ink);padding:24px;border-radius:10px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div class="testi-demo">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"Ho fatto l'esame C1 e <strong>l'ho superato con ottimi voti</strong>. Grazie per il tuo aiuto."</p>
+            <div style="border-top:1px solid #2e2e4e;padding-top:10px;">
+              <p class="testi-name">Ginevra</p>
+              <p class="testi-role">Preparazione DELE · C1</p>
+              <span class="badge-pill bp--solid-green" style="margin-top:6px;display:inline-block;">DELE C1 ✓</span>
+            </div>
+          </div>
+          <div class="testi-demo testi-demo--featured">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"Sono arrivata in America Latina senza sapere una parola. <strong>Ho imparato tutto da zero</strong> e la consiglio moltissimo."</p>
+            <div style="border-top:1px solid #2e2e4e;padding-top:10px;">
+              <p class="testi-name">Tata Zinoveva</p>
+              <p class="testi-role">Da zero · uso quotidiano</p>
+              <span class="badge-pill bp--ink" style="margin-top:6px;display:inline-block;">★ Google Review</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="comp-block__spec">Card standard: bordo #2e2e4e · Card featured: bordo coral 1.5px · Sfondo obbligatorio: ink (#1C1C2E)</p>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="comp-block">
+      <p class="comp-block__title">Checklist — all'interno delle card servizio</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;">
+        <div>
+          <p style="font-size:11px;color:var(--coral);font-weight:500;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Coral</p>
+          <ul class="checklist">
+            <li><span class="chk chk--coral"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Lezioni personalizzate</li>
+            <li><span class="chk chk--coral"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Feedback continuo</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;color:var(--green);font-weight:500;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Green (DELE)</p>
+          <ul class="checklist">
+            <li><span class="chk chk--green"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Simulazioni ufficiali</li>
+            <li><span class="chk chk--green"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Correzione mirata</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;color:var(--blue);font-weight:500;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Blue (DELE adulti)</p>
+          <ul class="checklist">
+            <li><span class="chk" style="background:var(--blue);"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Gestione del tempo</li>
+            <li><span class="chk" style="background:var(--blue);"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Prove orali e scritte</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM INPUT -->
+    <div class="comp-block">
+      <p class="comp-block__title">Input form (newsletter / lead magnet)</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:12px;">
+        <input class="input-demo" type="text" placeholder="Il tuo nome">
+        <input class="input-demo" type="email" placeholder="La tua email">
+        <button class="btn btn--amber">Iscriviti gratis →</button>
+      </div>
+      <p class="comp-block__spec">Input: bordo #c0b0a0, focus bordo amber · border-radius: 8px · padding: 11px 14px · Font DM Sans 14px</p>
+    </div>
+
+    <!-- SPACING -->
+    <div class="comp-block">
+      <p class="comp-block__title">Spaziature &amp; raggio bordi</p>
+      <div class="spacing-row" style="margin-bottom:24px;">
+        <div class="space-block">
+          <div class="space-visual" style="height:4px;width:40px;"></div>
+          <span class="space-val">4px</span>
+          <span class="space-label">XS</span>
+        </div>
+        <div class="space-block">
+          <div class="space-visual" style="height:8px;width:40px;"></div>
+          <span class="space-val">8px</span>
+          <span class="space-label">S</span>
+        </div>
+        <div class="space-block">
+          <div class="space-visual" style="height:12px;width:40px;"></div>
+          <span class="space-val">12px</span>
+          <span class="space-label">M</span>
+        </div>
+        <div class="space-block">
+          <div class="space-visual" style="height:16px;width:40px;"></div>
+          <span class="space-val">16px</span>
+          <span class="space-label">L</span>
+        </div>
+        <div class="space-block">
+          <div class="space-visual" style="height:24px;width:40px;"></div>
+          <span class="space-val">24px</span>
+          <span class="space-label">XL</span>
+        </div>
+        <div class="space-block">
+          <div class="space-visual" style="height:32px;width:40px;"></div>
+          <span class="space-val">32px</span>
+          <span class="space-label">2XL</span>
+        </div>
+        <div class="space-block">
+          <div class="space-visual" style="height:48px;width:40px;"></div>
+          <span class="space-val">48px</span>
+          <span class="space-label">3XL</span>
+        </div>
+        <div class="space-block">
+          <div class="space-visual" style="height:72px;width:40px;"></div>
+          <span class="space-val">72px</span>
+          <span class="space-label">Sezione</span>
+        </div>
+      </div>
+
+      <p style="font-size:12px;font-weight:500;color:var(--text-lt);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">Raggio bordi</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:40px;height:40px;background:var(--coral);border-radius:4px;"></div>
+          <span style="font-size:11px;color:var(--text-lt);">4px</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:40px;height:40px;background:var(--coral);border-radius:8px;"></div>
+          <span style="font-size:11px;color:var(--text-lt);">8px · btn</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:40px;height:40px;background:var(--coral);border-radius:12px;"></div>
+          <span style="font-size:11px;color:var(--text-lt);">12px · card</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:40px;height:40px;background:var(--coral);border-radius:14px;"></div>
+          <span style="font-size:11px;color:var(--text-lt);">14px · card L</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:40px;height:40px;background:var(--coral);border-radius:16px;"></div>
+          <span style="font-size:11px;color:var(--text-lt);">16px · hero img</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:40px;height:40px;background:var(--coral);border-radius:20px;"></div>
+          <span style="font-size:11px;color:var(--text-lt);">20px · pill nav</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:40px;height:40px;background:var(--coral);border-radius:50%;"></div>
+          <span style="font-size:11px;color:var(--text-lt);">50% · chk</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!--  06 · LOGO & IMMAGINI                      -->
+<!-- ══════════════════════════════════════════ -->
+<section class="sec" id="logo">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-header__num" style="color:#7A5A3C;">06 · Logo & Immagini</span>
+      <h2 class="sec-header__title serif">Come si rappresenta il brand visivamente.</h2>
+      <p class="sec-header__sub">Regole per l'uso del logo, del nome, dell'emoji e delle immagini fotografiche.</p>
+    </div>
+
+    <!-- Logo demos -->
+    <p style="font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-lt);margin-bottom:14px;">Logo — su diversi sfondi</p>
+    <div class="brand-usage-grid" style="margin-bottom:32px;">
+      <div class="brand-demo">
+        <div class="brand-logo">
+          <span class="brand-logo__mark">🥭</span>
+          <span class="brand-logo__name" style="color:var(--text-dk);">Lezioni di Spagnolo Facile</span>
+        </div>
+        <p class="brand-demo__label">Su sfondo chiaro (white-warm) · ✓</p>
+      </div>
+      <div class="brand-demo brand-demo--dark">
+        <div class="brand-logo brand-logo--dark">
+          <span class="brand-logo__mark">🥭</span>
+          <span class="brand-logo__name">Lezioni di Spagnolo Facile</span>
+        </div>
+        <p class="brand-demo__label">Su sfondo ink · ✓</p>
+      </div>
+      <div class="brand-demo brand-demo--cream">
+        <div class="brand-logo">
+          <span class="brand-logo__mark">🥭</span>
+          <span class="brand-logo__name" style="color:var(--text-dk);">Lezioni di Spagnolo Facile</span>
+        </div>
+        <p class="brand-demo__label">Su sfondo cream · ✓</p>
+      </div>
+      <div class="brand-demo" style="background:var(--coral);">
+        <div class="brand-logo">
+          <span class="brand-logo__mark">🥭</span>
+          <span class="brand-logo__name" style="color:#fff;">Lezioni di Spagnolo Facile</span>
+        </div>
+        <p class="brand-demo__label" style="color:rgba(255,255,255,.7);">Su sfondo coral — solo per elementi pop-up · ✓</p>
+      </div>
+    </div>
+
+    <!-- DO / DONT -->
+    <p style="font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-lt);margin-bottom:14px;">Regole d'uso del logo</p>
+    <div class="do-dont-grid">
+      <div class="do-card">
+        <span class="do-card__label">✓ Sì</span>
+        <ul class="do-card__list">
+          <li><span style="margin-top:3px;">→</span> Usare sempre 🥭 + nome per esteso insieme</li>
+          <li><span style="margin-top:3px;">→</span> Font: DM Sans weight 500 per il nome</li>
+          <li><span style="margin-top:3px;">→</span> Emoji size ~22–28px, nome ~15–16px</li>
+          <li><span style="margin-top:3px;">→</span> Spazio minimo intorno: almeno 16px su ogni lato</li>
+          <li><span style="margin-top:3px;">→</span> Usare il nome completo "Lezioni di Spagnolo Facile" nel footer e nei meta</li>
+        </ul>
+      </div>
+      <div class="dont-card">
+        <span class="dont-card__label">✗ No</span>
+        <ul class="dont-card__list">
+          <li><span style="margin-top:3px;">→</span> Usare solo il mango senza testo (non è riconoscibile)</li>
+          <li><span style="margin-top:3px;">→</span> Abbreviare in "LSF" o "Lezioni Spagnolo"</li>
+          <li><span style="margin-top:3px;">→</span> Usare IM Fell English per il nome nel logo</li>
+          <li><span style="margin-top:3px;">→</span> Mettere il logo su sfondi con scarso contrasto</li>
+          <li><span style="margin-top:3px;">→</span> Deformare o ridimensionare emoji e testo in modo disomogeneo</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Fotografia -->
+    <div style="margin-top:40px;">
+      <p style="font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-lt);margin-bottom:16px;">Stile fotografico</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px;">
+          <p style="font-size:13px;font-weight:500;color:var(--green-txt);margin-bottom:12px;">✓ Immagini ideali</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+            <li style="font-size:13px;color:var(--text-md);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--green);margin-top:3px;">→</span>Foto di Rebeca: naturale, sorridente, professionale. Sfondo neutro o scenico.</li>
+            <li style="font-size:13px;color:var(--text-md);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--green);margin-top:3px;">→</span>Luce calda, colori desaturati e caldi (in linea con la palette cream/coral).</li>
+            <li style="font-size:13px;color:var(--text-md);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--green);margin-top:3px;">→</span>Aspect ratio: 3/4 per ritratti (hero), 1/1 per sezione chi-sono.</li>
+            <li style="font-size:13px;color:var(--text-md);display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--green);margin-top:3px;">→</span>Object-position: top center per mostrare sempre il viso.</li>
+          </ul>
+        </div>
+        <div style="background:#FFF4F2;border:1px solid #fccfc5;border-radius:12px;padding:22px;">
+          <p style="font-size:13px;font-weight:500;color:var(--coral-dk);margin-bottom:12px;">✗ Immagini da evitare</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+            <li style="font-size:13px;color:var(--coral-dk);display:flex;gap:8px;align-items:flex-start;"><span style="margin-top:3px;">→</span>Foto stock generiche di "studenti felici con laptop"</li>
+            <li style="font-size:13px;color:var(--coral-dk);display:flex;gap:8px;align-items:flex-start;"><span style="margin-top:3px;">→</span>Immagini con filtri forti o saturazione eccessiva</li>
+            <li style="font-size:13px;color:var(--coral-dk);display:flex;gap:8px;align-items:flex-start;"><span style="margin-top:3px;">→</span>Foto sfocate, bassa risoluzione o con watermark</li>
+            <li style="font-size:13px;color:var(--coral-dk);display:flex;gap:8px;align-items:flex-start;"><span style="margin-top:3px;">→</span>Immagini con testo embedded (non accessibile e non indicizzabile)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALT TEXT guideline -->
+    <div style="margin-top:24px;padding:20px 24px;background:var(--white-warm);border:1px solid var(--border);border-radius:12px;">
+      <p style="font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-lt);margin-bottom:10px;">Alt text SEO — regola per ogni immagine</p>
+      <p style="font-size:13px;color:var(--text-md);margin-bottom:10px;">Ogni immagine deve avere un alt text descrittivo e contestuale. Mai lasciare alt="" su immagini contenuto.</p>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-bottom:8px;">
+        <p style="font-size:11px;color:var(--coral-dk);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;">✗ Sbagliato</p>
+        <p style="font-size:13px;color:var(--text-md);font-family:'Courier New',monospace;">alt="foto" / alt="image" / alt=""</p>
+      </div>
+      <div style="background:var(--green-lt);border:1px solid #b3e6d4;border-radius:8px;padding:14px 16px;">
+        <p style="font-size:11px;color:var(--green-txt);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;">✓ Corretto</p>
+        <p style="font-size:13px;color:var(--green-txt);font-family:'Courier New',monospace;">alt="Rebeca Martínez, insegnante di spagnolo online madrelingua"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER GUIDELINES -->
+<footer style="background:var(--ink);padding:48px 32px;margin-top:0;">
+  <div style="max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span style="font-size:24px;">🥭</span>
+      <span style="font-size:15px;font-weight:500;color:var(--cream);">Lezioni di Spagnolo Facile</span>
+    </div>
+    <div>
+      <p style="font-size:12px;color:#7A8CAA;">Brand Guidelines v1.0 · Aprile 2026 · lezionidispagnolofacile.it</p>
+      <p style="font-size:12px;color:#7A8CAA;margin-top:3px;">Documento interno. Non distribuire senza autorizzazione.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
