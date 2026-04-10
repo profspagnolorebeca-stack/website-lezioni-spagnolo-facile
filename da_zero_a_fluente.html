@@ -243,7 +243,7 @@ button{cursor:pointer;font-family:inherit;}
 .footer__top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid #2e2e4e;}
 .footer__brand__name{font-size:16px;font-weight:500;color:#fff;margin-bottom:8px;}
 .footer__brand__sub{font-size:12px;color:#A0B0D5;line-height:1.8;}
-.footer__col-title{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#A0B0D5;margin-bottom:14px;}
+.footer__col-title{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;}
 .footer__links-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
 .footer__links-list a{font-size:13px;color:#aab4cc;transition:color .2s;}
 .footer__links-list a:hover{color:#fff;}
@@ -300,6 +300,8 @@ button{cursor:pointer;font-family:inherit;}
   .nav__links .btn{align-self:flex-start;width:100%;}
   .nav__hamburger{display:flex;}
   .footer__bottom{flex-direction:column;align-items:flex-start;}
+  .footer__col-title{color:var(--coral)!important;}
+  .sobremi{grid-template-columns:1fr;}
   .sec{padding:52px 20px;}
   .hero{padding:48px 20px 40px;}
   .container{padding:0 20px;}
@@ -314,7 +316,6 @@ button{cursor:pointer;font-family:inherit;}
   .lm__input{font-size:16px;}
   .footer__newsletter-row input{font-size:16px;}
   .motivational{padding:28px 20px;}
-  .sobremi{grid-template-columns:1fr;}
   .footer .ml-embedded input[type="email"],
   .footer .ml-embedded input[type="text"]{font-size:16px!important;min-height:44px!important;}
   .footer .ml-embedded input[type="submit"],
@@ -667,7 +668,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <p class="sobremi__quote">Lo spagnolo è la mia lingua madre. <strong>So esattamente dove si perde uno studente italiano</strong>, perché sto imparando l'italiano anch'io: conosco dall'interno la confusione tra le due lingue, i falsi amici, i momenti in cui le parole si mescolano.</p>
         <figure style="margin:0;"><div class="sobremi__photo">
-          <img alt="Rebeca Martínez, docente di spagnolo online madrelingua" src="images/rebeca-valtellina.png">
+          <picture>
+            <source srcset="images/rebeca-valtellina.webp" type="image/webp">
+            <img alt="Rebeca Martínez, docente di spagnolo online madrelingua" src="images/rebeca-valtellina.png">
+          </picture>
         </div><figcaption style="font-size:11px;color:#8a7a68;text-align:center;padding:8px 0 0;font-style:italic;line-height:1.5;">Scoprendo la Valtellina in Lombardia (Italia · 2025)</figcaption></figure>
       </div>
       <div class="pilares">
