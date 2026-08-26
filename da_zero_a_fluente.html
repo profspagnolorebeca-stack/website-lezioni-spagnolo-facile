@@ -222,6 +222,10 @@ button{cursor:pointer;font-family:inherit;}
 .price-list li strong{color:var(--text-dk);font-weight:500;}
 .price-save{font-size:11px;font-weight:500;color:var(--green-txt);background:var(--green-lt);border-radius:6px;padding:2px 8px;margin-left:4px;display:inline-block;}
 .price-card__mt{margin-top:auto;}
+.price-toggle{display:inline-flex;background:var(--cream);border:1px solid var(--border);border-radius:30px;padding:4px;gap:4px;margin-bottom:28px;}
+.price-toggle__btn{font-family:inherit;font-size:13px;font-weight:500;color:var(--text-md);background:transparent;border:none;border-radius:24px;padding:9px 20px;cursor:pointer;transition:background .18s,color .18s;}
+.price-toggle__btn.is-active{background:var(--coral);color:#fff;}
+.price-toggle__btn:not(.is-active):hover{color:var(--coral);}
 
 /* ── SVC CTA ─────────────────────────────────────────── */
 .svc-cta-outer{padding:72px 32px;background:var(--white-warm);}
@@ -715,8 +719,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <span class="sec__tag">Lezioni e percorsi</span>
     <h2 class="sec__h2 serif" style="margin-bottom:8px;">Scegli il tuo percorso di spagnolo online:<br>formato e frequenza su misura</h2>
-    <p class="sec__sub">Ogni pacchetto include lezioni 1:1 online, materiali personalizzati e feedback continuo.</p>
-    <div class="price-grid">
+    <p class="sec__sub">Ogni pacchetto include lezioni online, materiali personalizzati e feedback continuo. E se vuoi, puoi seguirle insieme a un amico o un collega!</p>
+    <div class="price-toggle" role="tablist" aria-label="Tipo di percorso">
+      <button type="button" class="price-toggle__btn is-active" data-target="ind" aria-selected="true">Percorso individuale</button>
+      <button type="button" class="price-toggle__btn" data-target="grp" aria-selected="false">In coppia o in gruppo</button>
+    </div>
+    <div class="price-grid" id="grid-ind">
 
       <!-- Mensile -->
       <div class="price-card">
@@ -776,8 +784,84 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
     </div>
+
+    <p id="note-grp" style="display:none;font-size:13px;color:var(--text-lt);margin:0 0 20px;">Prezzo <strong style="color:var(--text-md);font-weight:600;">a persona</strong> · da 2 a 4 studenti dello stesso livello · condividete il percorso e il costo.</p>
+
+    <div class="price-grid" id="grid-grp" style="display:none;">
+      <div class="price-card">
+        <span class="price-badge price-badge--gray">Mensile</span>
+        <h3 class="price-card__name serif">Provate insieme</h3>
+        <ul class="price-list">
+          <li>
+            <span class="price-chk price-chk--coral"><svg aria-hidden="true" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>4 lezioni → <strong>€68</strong> a persona</span>
+          </li>
+          <li>
+            <span class="price-chk price-chk--coral"><svg aria-hidden="true" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>8 lezioni (intensivo) → <strong>€136</strong> a persona</span>
+          </li>
+        </ul>
+        <p class="price-card__desc">Iniziate senza impegno e scoprite se il formato condiviso fa per voi.</p>
+      </div>
+
+      <div class="price-card price-card--featured">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <span class="price-badge price-badge--coral">Trimestrale</span>
+          <span class="price-save" style="margin-left:0;">Risparmi 12%</span>
+        </div>
+        <h3 class="price-card__name serif">Progressi insieme</h3>
+        <ul class="price-list">
+          <li>
+            <span class="price-chk price-chk--coral"><svg aria-hidden="true" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>12 lezioni → <strong>€180</strong> a persona</span>
+          </li>
+          <li>
+            <span class="price-chk price-chk--coral"><svg aria-hidden="true" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>18 lezioni (intensivo) → <strong>€270</strong> a persona</span>
+          </li>
+        </ul>
+        <p class="price-card__desc">Per chi vuole consolidare le basi condividendo il percorso.</p>
+      </div>
+
+      <div class="price-card">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <span class="price-badge price-badge--gray">Semestrale</span>
+          <span class="price-save" style="margin-left:0;">Risparmi 24%</span>
+        </div>
+        <h3 class="price-card__name serif">Un vero salto di livello</h3>
+        <ul class="price-list">
+          <li>
+            <span class="price-chk price-chk--coral"><svg aria-hidden="true" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>24 lezioni → <strong>€312</strong> a persona</span>
+          </li>
+          <li>
+            <span class="price-chk price-chk--coral"><svg aria-hidden="true" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>48 lezioni (intensivo) → <strong>€624</strong> a persona</span>
+          </li>
+        </ul>
+        <p class="price-card__desc">Il percorso completo, condiviso: dal basico all'intermedio.</p>
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+(function(){
+  var wrap=document.getElementById("lezioni");
+  if(!wrap) return;
+  var btns=wrap.querySelectorAll(".price-toggle__btn");
+  var gInd=document.getElementById("grid-ind"), gGrp=document.getElementById("grid-grp"), note=document.getElementById("note-grp");
+  btns.forEach(function(b){
+    b.addEventListener("click",function(){
+      var grp=b.getAttribute("data-target")==="grp";
+      btns.forEach(function(x){var on=(x===b);x.classList.toggle("is-active",on);x.setAttribute("aria-selected",on?"true":"false");});
+      gInd.style.display=grp?"none":"";
+      gGrp.style.display=grp?"":"none";
+      if(note) note.style.display=grp?"":"none";
+    });
+  });
+})();
+</script>
 
 <!-- ── CTA FINAL ─────────────────────────────────────────────── -->
 <div class="svc-cta-outer" id="sessione">
