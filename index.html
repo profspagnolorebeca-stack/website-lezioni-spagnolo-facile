@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+<!-- Consent Mode v2: default = tutto negato finché l'utente non sceglie nel banner (CookieYes). Deve stare PRIMA di GTM -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied',
+  'functionality_storage': 'denied',
+  'personalization_storage': 'denied',
+  'security_storage': 'granted',
+  'wait_for_update': 500
+});
+gtag('set', 'ads_data_redaction', true);
+gtag('set', 'url_passthrough', false);
+</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -105,7 +122,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://assets.mailerlite.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
@@ -290,7 +306,7 @@ button{cursor:pointer;font-family:inherit;}
 /* FOOTER */
 .footer{background:var(--ink);padding:48px 32px 32px;}
 .footer__inner{max-width:1100px;margin:0 auto;}
-.footer__top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;margin-bottom:32px;}
+.footer__top{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;margin-bottom:32px;}
 .footer__brand__name{font-size:16px;font-weight:500;color:var(--cream);margin-bottom:6px;}
 .footer__brand__sub{font-size:13px;color:#A0B0D5;line-height:1.7;}
 .footer__col-title{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;}
@@ -393,7 +409,7 @@ button{cursor:pointer;font-family:inherit;}
 .footer .ml-embedded .ml-error-generic-message,
 .footer .ml-embedded .ml-field-error{color:#F0997B!important;font-size:12px!important;}
 </style>
-<!-- MailerLite Universal -->
+<!-- NEWSLETTER OFF: MailerLite Universal
 <script>
     (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
     .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
@@ -401,7 +417,7 @@ button{cursor:pointer;font-family:inherit;}
     (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
     ml('account', '2238455');
 </script>
-<!-- End MailerLite Universal -->
+End MailerLite Universal -->
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -451,7 +467,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero__photo">
       <picture>
         <source srcset="images/rebeca-perfil-opt.webp 1x, images/rebeca-perfil-2x.webp 2x" type="image/webp">
-        <img alt="Rebeca Martínez, insegnante di spagnolo online madrelingua" src="images/rebeca-perfil-opt.webp" fetchpriority="high">
+        <img alt="Rebeca Martínez, insegnante di spagnolo online madrelingua" src="images/rebeca-perfil-opt.webp" width="675" height="661" fetchpriority="high">
       </picture>
     </div>
   </div>
@@ -569,7 +585,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <figure style="margin:0;"><div class="sobremi__photo">
           <picture>
             <source srcset="images/rebeca-valtellina-opt.webp 1x, images/rebeca-valtellina-2x.webp 2x" type="image/webp">
-            <img alt="Rebeca Martínez, madrelingua spagnola e docente certificata Istituto Cervantes" src="images/rebeca-valtellina-opt.webp">
+            <img alt="Rebeca Martínez, madrelingua spagnola e docente certificata Istituto Cervantes" src="images/rebeca-valtellina-opt.webp" width="606" height="806" loading="lazy" decoding="async">
           </picture>
         </div><figcaption style="font-size:11px;color:#8a7a68;text-align:center;padding:8px 0 0;font-style:italic;line-height:1.5;">Scoprendo la Valtellina in Lombardia (Italia · 2025)</figcaption></figure>
       </div>
@@ -664,6 +680,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!-- NEWSLETTER -->
+<!-- NEWSLETTER OFF (sezione newsletter, MailerLite 814Bzu) — per riattivare: togli questo commento. Se riattivi il footer, ripristina anche la griglia a 3 colonne -->
+<!--
 <section class="sec sec--white" id="newsletter">
   <div class="container">
     <div class="lm">
@@ -686,6 +704,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
+-->
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -706,11 +725,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
+<!-- NEWSLETTER OFF (footer, MailerLite 814Bzu) — per riattivare: togli questo commento. Se riattivi il footer, ripristina anche la griglia a 3 colonne -->
+<!--
       <div>
         <p class="footer__col-title">Newsletter</p>
         <p class="footer__newsletter-sub">Tips pratici e storie per imparare lo spagnolo con gioia</p>
         <div class="ml-embedded" data-form="814Bzu"></div>
       </div>
+-->
     </div>
     <div class="footer__bottom">
       <p class="footer__copy">© 2026 Lezioni di Spagnolo Facile · Rebeca Martínez · Tutti i diritti riservati</p>

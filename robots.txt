@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-Disallow: /privacy.html
-
 Sitemap: https://www.lezionidispagnolofacile.it/sitemap.xml
