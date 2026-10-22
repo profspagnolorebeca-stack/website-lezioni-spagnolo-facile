@@ -30,7 +30,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Corso di Spagnolo per Adulti Online | Da Zero a Fluente | Rebeca Martínez</title>
 <meta name="description" content="Impara lo spagnolo da zero o riparti da dove ti sei fermato. Percorso personalizzato 1:1 online con Rebeca Martínez, madrelingua e docente Istituto Cervantes. Niente corso generico — solo il tuo ritmo, il tuo obiettivo.">
-<meta name="keywords" content="corso di spagnolo per adulti, imparare lo spagnolo da zero, lezioni di spagnolo online, spagnolo per principianti, lezioni di spagnolo 1:1, spagnolo online per italiani, corso spagnolo personalizzato">
+<meta name="keywords" content="lezioni di spagnolo per adulti, imparare lo spagnolo da zero, lezioni di spagnolo online, spagnolo per principianti, lezioni di spagnolo 1:1, spagnolo online per italiani, percorso di spagnolo personalizzato">
 <link rel="canonical" href="https://www.lezionidispagnolofacile.it/da_zero_a_fluente.html">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
@@ -89,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   --coral-mid:#F0997B; --coral-dk:#993C1D; --ink:#1C1C2E; --ink-mid:#B8C8E8;
   --ink-lt:#252542; --green-dk:#1C2B1E; --green:#1D9E75; --green-lt:#E1F5EE;
   --green-txt:#085041; --amber:#BA7517; --amber-lt:#FAEEDA; --amber-dk:#633806;
-  --text-dk:#1a1a18; --text-md:#555550; --text-lt:#888880; --border:#e0d8cc;
+  --text-dk:#1a1a18; --text-md:#555550; --text-lt:#6B6B64; --border:#e0d8cc;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -432,14 +432,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="nav__links" id="navLinks">
       <a href="da_zero_a_fluente.html" class="nav__link nav__link--active">Da zero a fluente</a>
       <a href="preparazione_dele.html" class="nav__link">Supera il DELE</a>
-      <a href="dele_escolar.html" class="nav__link">Supera il DELE Escolar</a>
-      <a href="https://wa.me/393665041300?text=Ciao!%20Vorrei%20sapere%20di%20pi%C3%B9%20sui%20corsi%20di%20spagnolo,%20il%20mio%20obiettivo%20%C3%A8" target="_blank" class="btn btn--coral">Contattami</a>
+      <a href="https://wa.me/393665041300?text=Ciao!%20Vorrei%20sapere%20di%20pi%C3%B9%20sulle%20lezioni%20di%20spagnolo,%20il%20mio%20obiettivo%20%C3%A8" target="_blank" class="btn btn--coral">Contattami</a>
     </div>
   </div>
 </nav>
 
+<main id="main-content">
+
 <!-- ── HERO ─────────────────────────────────────────────────── -->
-<section class="hero" id="main-content">
+<section class="hero">
   <div class="hero__inner">
     <div>
       <span class="hero__tag">Lezioni di spagnolo online 1:1 · Percorso su misura per italiani</span>
@@ -737,10 +738,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="sec__h2 serif" style="margin-bottom:8px;">Scegli il tuo percorso di spagnolo online:<br>formato e frequenza su misura</h2>
     <p class="sec__sub">Ogni pacchetto include lezioni online, materiali personalizzati e feedback continuo. E se vuoi, puoi seguirle insieme a un amico o un collega!</p>
     <div class="price-toggle" role="tablist" aria-label="Tipo di percorso">
-      <button type="button" class="price-toggle__btn is-active" data-target="ind" aria-selected="true">Percorso individuale</button>
-      <button type="button" class="price-toggle__btn" data-target="grp" aria-selected="false">In coppia o in gruppo</button>
+      <button type="button" class="price-toggle__btn is-active" id="tab-ind" role="tab" aria-controls="grid-ind" data-target="ind" aria-selected="true">Percorso individuale</button>
+      <button type="button" class="price-toggle__btn" id="tab-grp" role="tab" aria-controls="grid-grp" data-target="grp" aria-selected="false">In coppia o in gruppo</button>
     </div>
-    <div class="price-grid" id="grid-ind">
+    <div class="price-grid" id="grid-ind" role="tabpanel" aria-labelledby="tab-ind">
 
       <!-- Mensile -->
       <div class="price-card">
@@ -803,7 +804,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <p id="note-grp" style="display:none;font-size:13px;color:var(--text-lt);margin:0 0 20px;">Prezzo <strong style="color:var(--text-md);font-weight:600;">a persona</strong> · da 2 a 4 studenti dello stesso livello · condividete il percorso e il costo.</p>
 
-    <div class="price-grid" id="grid-grp" style="display:none;">
+    <div class="price-grid" id="grid-grp" role="tabpanel" aria-labelledby="tab-grp" style="display:none;">
       <div class="price-card">
         <span class="price-badge price-badge--gray">Mensile</span>
         <h3 class="price-card__name serif">Provate insieme</h3>
@@ -960,6 +961,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ── FOOTER ─────────────────────────────────────────────────── -->
+</main>
+
 <footer class="footer">
   <div class="footer__inner">
     <div class="footer__top">
@@ -973,7 +976,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><a href="index.html">Home</a></li>
           <li><a href="da_zero_a_fluente.html">Da zero a fluente</a></li>
           <li><a href="preparazione_dele.html">Supera il DELE</a></li>
-          <li><a href="dele_escolar.html">Supera il DELE Escolar</a></li>
           <li><a href="https://wa.me/393665041300" target="_blank" rel="noopener noreferrer">Contattami su WhatsApp</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
